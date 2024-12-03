@@ -34,14 +34,12 @@ def motionMain():
     while True:
         frame = picam2.capture_array()
 
-        #color conversion
+        #color conversion, from RGB ro BGR
         frame = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
         gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-
-
-
+        #reducenoise
         gray_frame = cv2.GaussianBlur(gray_frame, (21, 21), 0)
-
+        
         if prev_frame is None:
             prev_frame = gray_frame
             continue
