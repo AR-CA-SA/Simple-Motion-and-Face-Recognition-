@@ -1,5 +1,5 @@
 from motion import motionMain
-
+#main interface to star up the program
 
 print("-Press O to start up the program-")
 print("-Press X to kill the program-")
